@@ -28,7 +28,7 @@
     <%= content_tag('a', '', :name => "note-#{journal.indice}")%>
     <%= authoring journal.created_on, journal.user, :label => :label_updated_time_by %></h4>
 
-    <% if journal.details.any? %>
+    <% if journal.details.any? && selected_tab == 'history_all' %>
     <ul class="details">
       <% details_to_strings(journal.details).each do |string| %>
        <li><%= string %></li>
